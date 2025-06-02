@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\back\\back.csproj": {}
+    "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\Bakdel\\back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\back\\back.csproj": {
+    "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\Bakdel\\back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\back\\back.csproj",
+        "projectUniqueName": "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\Bakdel\\back.csproj",
         "projectName": "back",
-        "projectPath": "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\back\\back.csproj",
+        "projectPath": "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\Bakdel\\back.csproj",
         "packagesPath": "C:\\Users\\Nikolai Stanes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\back\\obj\\",
+        "outputPath": "C:\\Users\\Nikolai Stanes\\OneDrive - Innlandet fylkeskommune\\Documents\\GithubRepos\\IT-UtviklingEksamen\\Bakdel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nikolai Stanes\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,6 +49,16 @@
               "version": "[9.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.5, )"
             }
