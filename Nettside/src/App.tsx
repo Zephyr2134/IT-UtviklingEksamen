@@ -1,33 +1,81 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import Foresporsler from './komponenter/foresporsler';
+import './style.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+interface Hund
+{
+  id: number;
+  navn: string;
+  rase: string;
+  alder: number;
+  spesielleBehov: string;
+}
+
+interface HundeEier
+{
+  id: number;
+  navn: string;
+  telefon: string;
+  email: string;
+  adresse: string;
+  hund: Hund;
+}
+
+interface HundePasser
+{
+  id: number;
+  navn: string;
+  telefon: string;
+  email: string;
+  pris: number;
+  omraade: string;
+}
+
+interface Foresporsel
+{
+  id: number;
+  eier: HundeEier;
+  passer: HundePasser;
+  dato: Date;
+  instruksjoner: string;
+  akseptert: boolean;
+}
+
+interface Bruker
+{
+  id: number;
+  brukernavn: string;
+  passord: string;
+  rolle: string;
+}
+
+const App = () => {
+
+  const [hundeEiere, setHundeEiere] = useState<HundeEier[]>([]);
+  const [hundePassere, setHundePassere] = useState<HundePasser[]>([]);
+  const [foresporsler, setForesporsler] = useState<Foresporsel[]>([]);
+  
+  const [loggetPaa, setLoggetPaa] = useState(false);
+  const [burkernavn, setBrukernavn] = useState("");
+  const [passord, setPassord] = useState("");
+  const [aktivBruker, setAktivBruker] = useState<Bruker>();
+
+  const login = () => {
+    console.log("Login");
+    setLoggetPaa(true);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {!loggetPaa ?   
+      <form className="login" onSubmit={e=>{e.preventDefault(); login()}}>
+        <input required placeholder="Brukernavn" value={burkernavn} onChange={e=>setBrukernavn(e.target.value)}/>
+        <input required placeholder="Passord" value={passord} onChange={e=>setPassord(e.target.value)}/>
+        <button type="submit">Logg inn</button>
+      </form>
+    : <div className="hovedSide">
+        {aktivBruker && <Foresporsler aktivBruker={aktivBruker} foresporsler={foresporsler}/>}
+      </div>}
     </>
   )
 }
